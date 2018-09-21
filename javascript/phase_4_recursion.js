@@ -52,35 +52,36 @@ function deepDup(arr){
   return result;
 }
 
-function  bsearch(arr, targe) { //apparantly this function takes a shield as an argument
+function bsearch(arr, targe) { //apparantly this function takes a shield as an argument
   if (arr.length === 0) {
     return -1;
   }
-  let mid_index = arr.length/2;
+
+  let mid_index = Math.floor(arr.length/2);
   let mid = arr[mid_index];
 
-  if (mid === targe){
+  if (mid === targe) {
     return mid_index;
-  } else  if (mid > targe) {
+  } else if (mid > targe) {
     return bsearch(arr.slice(0, mid_index), targe);
   } else {
-   let result = bsearch(arr.slice(mid_index+1), targe);
-   if (result == -1) {
+   let result = bsearch(arr.slice(mid_index+1, arr.length), targe);
+   if (result === -1) {
      return -1;
-   }else {
+   } else {
      return result + (mid_index + 1);
+     }
    }
-  }
+
 
 
 }
 
 function mergesort(arr){
 
-merge = function(left, right)
+// merge = function(left, right)
 
 }
-
 function subsets(arr) {
 
 }
